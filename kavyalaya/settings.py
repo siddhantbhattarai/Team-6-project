@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'dash',
     'portfolio',
     'user',
+    'taggit',
 ]
 
 MIDDLEWARE = [
