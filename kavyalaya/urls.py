@@ -23,6 +23,7 @@ from django.conf.urls import handler404
 handler404 = 'portfolio.views.custom_404'
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("user/", include("django.contrib.auth.urls")),
     path('ckeditor/',include('ckeditor_uploader.urls')),
     path('', include('portfolio.urls')),
     path('', include('postapp.urls')),
