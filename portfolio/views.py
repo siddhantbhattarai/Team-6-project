@@ -18,3 +18,8 @@ def teams(request):
 
 def careers(request):
     return render(request, 'portfolio/careers.html')
+
+
+#Custom 404 Error
+def custom_404(request, exception):
+    return render(request, '404.html', status=404)

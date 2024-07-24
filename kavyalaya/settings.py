@@ -225,3 +225,6 @@ CKEDITOR_CONFIGS = {
         ]),
     }
 }
+
+
+handler404 = 'views.custom_404'
