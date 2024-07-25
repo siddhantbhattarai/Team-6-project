@@ -24,10 +24,11 @@ handler404 = 'portfolio.views.custom_404'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("user/", include("django.contrib.auth.urls")),
+    path('user', include('user.urls')),
+    
     path('ckeditor/',include('ckeditor_uploader.urls')),
     path('', include('portfolio.urls')),
     path('', include('postapp.urls')),
-    path('user', include('user.urls')),
     path('dash', include('dash.urls')),
     
 ]

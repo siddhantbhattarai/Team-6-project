@@ -228,3 +228,5 @@ CKEDITOR_CONFIGS = {
 
 
 handler404 = 'views.custom_404'
+LOGIN_REDIRECT_URL = "home"
+LOGOUT_REDIRECT_URL = "home"
