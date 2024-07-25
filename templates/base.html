@@ -10,8 +10,8 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!--================= Favicon =================-->
-        <link rel="apple-touch-icon" href="{% static 'assets/images/fav.png' %}">
-        <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/images/fav.png' %}">        
+        <link rel="apple-touch-icon" href="{% static 'assets/images/logo/fav.ico' %}">
+        <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/images/logo/fav.ico' %}">        
         <!--================= Bootstrap V5 css =================-->
         <link rel="stylesheet" type="text/css" href="{% static 'assets/css/bootstrap.min.css' %}">        
         <!--================= Fontawesome  css =================-->
@@ -84,7 +84,7 @@
                         <nav>
                             <!--================= Menu Toggle btn =================-->
                             <div class="menu-toggle">
-                                <div class="logo"><a href="index.html" class="logo-text"> <img class="back-logo-dark" src="{% static 'assets/images/logo.png' %}" alt="logo"> <img class="back-logo-light" src="{% static 'assets/images/light-logo.png' %}" alt="logo"> </a></div>
+                                <div class="logo"><a href="{% url 'home' %}" class="logo-text"> <img class="back-logo-dark" src="{% static 'assets/images/logo/logo.png' %}" alt="logo"> <img class="back-logo-light" src="{% static 'assets/images/logo/logo.png' %}" alt="logo"> </a></div>
 
                                 <div class="searchbar-part back-search-mobile"> 
                                     <ul>
@@ -115,7 +115,7 @@
                             <!--================= Menu Structure =================--> 
                             <div class="back-inner-menus">
                                 <ul id="backmenu" class="back-menus back-sub-shadow">
-                                    <li> <a href="#">Home</a>
+                                    <li> <a href="{% url 'home' %}">Home</a>
                                     </li>
                                     <li> <a href="#">Pages</a>
                                     </li>                                                                   
@@ -177,18 +177,24 @@
                                         <li class="back_search"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></li>
                                         
                                         
-                                        
-                                        <li class="back-sign">
-                                            {% block usercontent %}
+                                        <ul>
+                                            <li class="back-sign">
+                                                {% block usercontent %}
+                                                    {% if user.is_authenticated %}
+                                                    <a href="#">
+                                                        Hi {{ user.username }}!
+                                                    </a>
+                                                    {% else %}
+                                                    <a href="{% url 'login' %}">Log In</a>
+                                                    {% endif %}
+                                                {% endblock %}
+                                            </li>
+                                            <li class="back-sign">
                                                 {% if user.is_authenticated %}
-                                                <a href="#">
-                                                    Hi {{ user.username }}!
-                                                </a>
-                                                {% else %}
-                                                <a href="{% url 'login' %}">Log In</a>
+                                                    <a href="{% url 'logout' %}">Log Out</a>
                                                 {% endif %}
-                                            {% endblock %}
-                                        </li>
+                                            </li>
+                                        </ul
                                     </ul>                                  
                                     <form class="search-form">
                                         <input type="text" class="form-input" placeholder="Search Here">
@@ -221,7 +227,7 @@
                         <div class="col-lg-3 md-mb-30">
                             <div class="footer-widget footer-widget-1">
                                 <div class="footer-logo white">
-                                    <a href="index.html" class="logo-text"> <img src="{% static 'assets/images/light-logo.png' %}" alt="logo"></a>
+                                    <a href="{% url 'home' %}" class="logo-text"> <img src="{% static 'assets/images/logo/logo.png' %}" alt="logo"></a>
                                 </div>
                                 <h5 class="footer-subtitle">We have lots of courses and programs from the main market experts.</h5>
                                 <h6 class="back-follow-us">Follow us</h6>
