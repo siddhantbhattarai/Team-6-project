@@ -1,7 +1,10 @@
 from django.shortcuts import render
+from rest_framework import viewsets
 from portfolio.models import GeneralInfo
-from .models import Post, Comment
+from .models import Post, Comment, PostCategory
 from .forms import CommentForm
+
+from .serializers import PostSerializer, CategorySerializer, CommentSerializer
 
 # Create your views here.
 def index(request):
@@ -107,3 +110,17 @@ def reply_page(request):
             return redirect(post_url+'#'+str(reply.id))
 
     return redirect("/")
+
+
+
+class PostViewSet(viewsets.ModelViewSet):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+
+class CategoryViewSet(viewsets.ModelViewSet):
+    queryset = PostCategory.objects.all()
+    serializer_class = CategorySerializer
+
+class CommentViewSet(viewsets.ModelViewSet):
+    queryset = Comment.objects.all()
+    serializer_class = CommentSerializer
