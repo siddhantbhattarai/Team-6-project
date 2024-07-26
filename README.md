@@ -65,7 +65,7 @@ Kavyalaya.com is a standalone web application designed to foster a community of 
 - **Authors**: Users who can post literature and engage with followers.
 - **Administrators**: Users who manage and moderate the platform.
 
-### 2.4 Operating Environment
+### 2.4 Production Environment
 - **Backend**: Python/Django
 - **Frontend**: HTML/CSS
 - **Database**: PostgreSQL, SQLite(For Testing)
