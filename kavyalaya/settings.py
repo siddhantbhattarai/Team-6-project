@@ -87,7 +87,7 @@ WSGI_APPLICATION = 'kavyalaya.wsgi.application'
 CORS_ALLOWED_ORIGINS = [
     "https://kavyalaya.com",
     "https://www.kavyalaya.com",
-    "https://demo.kavyalaya.com"
+    "https://demo.kavyalaya.com",
     "http://localhost:9001",
     "http://127.0.0.1:9001",
     "https://cdnjs.cloudflare.com",
@@ -96,7 +96,7 @@ CORS_ALLOWED_ORIGINS = [
 CSRF_TRUSTED_ORIGINS = [
     "https://kavyalaya.com",
     "https://www.kavyalaya.com",
-    "https://demo.kavyalaya.com"
+    "https://demo.kavyalaya.com",
     "http://localhost:9001",
     "http://127.0.0.1:9001",
     "https://cdnjs.cloudflare.com",
