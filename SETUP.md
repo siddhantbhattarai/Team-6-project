@@ -10,8 +10,8 @@ python -m venv env
 
 ## 3. Activate Virtual Environment
 
-Windows: ./env/Scripts/activate
-Linux/MacOS: source /env/bin/activate
+- Windows: ./env/Scripts/activate,
+- Linux/MacOS: source /env/bin/activate
 
 ## 4. Install Requirement Files
 
@@ -19,8 +19,8 @@ pip install -r requirements.txt
 
 ## 5. Run Server
 
-Windows: python manage.py runserver
-Linux/MacOS: python3 manage.py runserver
+- Windows: python manage.py runserver,
+- Linux/MacOS: python3 manage.py runserver
 
 ## 6. Open Browser and View
 
