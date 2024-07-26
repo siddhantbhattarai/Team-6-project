@@ -36,20 +36,19 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="login-right-form">
-                        <form>
+                        <form method="POST">
                             <ul class="social-links">
                                 <li><a href="#" class="fa-brand"><span aria-hidden="true" class="fa-brands fa-facebook-f"></span></a></li>
                                 <li><a href="#"><span aria-hidden="true" class="fa-brands fa-google-plus-g"></span></a></li>
                             </ul>
                             <span class="back-or"> ........ Or, sign in with your username ........ </span>
-
-                            {{ form.errors }}
-                            {% csrf_token %}
-                            {{ form.as_p }}
-                            <div class="back-check-box">
-                                <p>Forgot your password?</p>
-                            </div>
-                            <button type="submit" id="button" name="submit">Sign In</button>
+                                {{ form.errors }}
+                                {% csrf_token %}
+                                {{ form.as_p }}
+                                <input type="submit" value="Login" class="back-login-btn">
+                                <div class="back-check-box">
+                                    <p>Forgot your password?</p>
+                                </div>
                             <em class="signup">New to Kavyalaya? <a href="{% url 'register' %}">Sign Up</a></em>
                         </form>
                     </div>

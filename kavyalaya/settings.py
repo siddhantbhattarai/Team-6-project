@@ -126,16 +126,12 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
+'''
 CACHES = {
     'default': {
         'BACKEND': 'django_redis.cache.RedisCache',
         'LOCATION': [
-            'redis://127.0.0.1:26379/0',
-            'redis://127.0.0.1:26380/0',
-            'redis://127.0.0.1:26381/0',
-            'redis://127.0.0.1:26382/0',
-            'redis://127.0.0.1:26383/0',
+            'redis://127.0.0.1:26379/1',
         ],
         'OPTIONS': {
             'CLIENT_CLASS': 'django_redis.client.SentinelClient',
@@ -149,7 +145,7 @@ CACHES = {
 # This is to ensure Django sessions are stored in Redis
 SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
 SESSION_CACHE_ALIAS = 'default'
-
+'''
 
 
 
