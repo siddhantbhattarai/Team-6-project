@@ -25,3 +25,7 @@ pip install -r requirements.txt
 ## 6. Open Browser and View
 
 Enter url http://127.0.0.1:8000 or http://localhost:8000
+
+## 6. Login Details
+ - Username: user
+ - Password: 12345678

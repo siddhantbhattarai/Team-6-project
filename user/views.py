@@ -15,6 +15,5 @@ class UserLoginViews(generic.FormView):
     success_url = reverse_lazy("home")
 
 class UserLogoutViews(generic.FormView):
-    template_name = "registration/logout.html"
     success_url = reverse_lazy("home")
     
