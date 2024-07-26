@@ -27,7 +27,7 @@ DEBUG = True
 
 MAINTENANCE_MODE = False
 
-ALLOWED_HOSTS = ['localhost','127.0.0.1','kavyalaya.com','www.kavyalaya.com']
+ALLOWED_HOSTS = ['localhost','127.0.0.1','kavyalaya.com','demo.kavyalaya.com','www.kavyalaya.com']
 
 
 # Application definition
