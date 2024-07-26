@@ -68,8 +68,9 @@ Kavyalaya.com is a standalone web application designed to foster a community of 
 ### 2.4 Operating Environment
 - **Backend**: Python/Django
 - **Frontend**: HTML/CSS
-- **Database**: PostgreSQL
+- **Database**: PostgreSQL, SQLite(For Testing)
 - **Containerization & Scaling**: Docker/Kubernetes
+- **Processing Manager**: PM2
 - **Operating System**: Ubuntu 24.04
 - **Deployment**: Oracle Cloud
 - **Storage**: Oracle Bucket
