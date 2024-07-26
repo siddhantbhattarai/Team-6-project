@@ -3,7 +3,7 @@ from rest_framework import viewsets
 from portfolio.models import GeneralInfo
 from .models import Post, Comment, PostCategory
 from .forms import CommentForm
-
+from django.views.decorators.cache import cache_page
 from .serializers import PostSerializer, CategorySerializer, CommentSerializer
 
 # Create your views here.
@@ -33,7 +33,7 @@ def index(request):
 
 
 
-
+@cache_page(60 * 10)
 def post_list(request):
     posts = Post.published.all()
     paginator = Paginator(posts, 10) # 10 posts in each page
@@ -55,14 +55,7 @@ def post_list(request):
     return render(request,'post_list.html',{'posts':posts, page:'pages','tag':tag})
 
 
-def post_detail(request, post):
-    post=get_object_or_404(Post,url=post,status='published')
-    return render(request, 'post_detail.html',{'post':post})
-
-
-
-
-
+@cache_page(60 * 10)
 def post_detail(request, post):
     post=get_object_or_404(Post,slug=post,status='published')
 
@@ -88,9 +81,7 @@ def post_detail(request, post):
     return render(request, 'post_detail.html',{'post':post,'comments': comments,'comment_form':comment_form})
 
 
-
-
-
+@cache_page(60 * 10)
 def reply_page(request):
     if request.method == "POST":
 

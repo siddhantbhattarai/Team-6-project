@@ -2,7 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 from taggit.managers import TaggableManager
 from django.urls import reverse
-from ckeditor_uploader.fields import RichTextUploadingField #CK editor Rich text field
+from django_ckeditor_5.fields import CKEditor5Field
+
 # Create your models here.
 class PostCategory(models.Model):
     id = models.AutoField(primary_key=True)
@@ -41,7 +42,7 @@ class Post(models.Model):
     title = models.CharField(max_length=255)
     url = models.SlugField(max_length=250, unique=True)
     category = models.ForeignKey('PostCategory',on_delete=models.CASCADE)
-    body = RichTextUploadingField()
+    body = CKEditor5Field('Text', config_name='extends')
     featured_img = models.ImageField(upload_to='featured_image/%Y/%m/%d/')
     tags = TaggableManager()
 
